@@ -1,6 +1,6 @@
 # [My Awesome Future]
 
-# Devlog Hours are not meant to be validated, they are just a way to time the amount of time each progress took
+# Registered devlog hours on the website are not meant to be validated, they are just a way to time the amount of time each progress took.
 
 ## Description
 
