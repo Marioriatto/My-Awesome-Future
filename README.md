@@ -1,5 +1,7 @@
 # [My Awesome Future]
 
+# Devlog Hours are not meant to be validated, they are just a way to time the amount of time each progress took
+
 ## Description
 
 [My Awesome Future] Is a cozy life frutiger aero inspired game, where you can talk with characters, sell and buy items, and interact with the enviroment.
