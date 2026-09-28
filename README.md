@@ -26,7 +26,7 @@
    - Selecciona **Vender** para ofrecer ítems de tu propio inventario a cambio de monedas/burbujas.
    - Elige **Volver** para salir del menú de comercio y continuar la conversación.
 
-## Crédits
+## Credits
 
 - **Apple**
   - [Apple – Pexels](https://www.pexels.com/es-es/foto/fruta-de-manzana-roja-y-naranja-102104/)
