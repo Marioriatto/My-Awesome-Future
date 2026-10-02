@@ -29,9 +29,12 @@ public class ExitDialogueBubble : RegularDialogueBubble
     private System.Collections.IEnumerator ExitAnimation()
     {
         PopOut();
+        player.isInteracting = true;
+        wasCalled = true;
         JsonLoader.Instance.WriteSaveData();
         while (isAnimated || JsonLoader.Instance.isSaving)
         {
+            Debug.Log("Ciclo");
             yield return null;
         }
         #if UNITY_EDITOR
@@ -76,10 +79,27 @@ public class ExitDialogueBubble : RegularDialogueBubble
     }
     protected override void PopOut()
     {
-        base.PopOut();
+        isAnimated = true;
+        if (currentAnimation != null) StopCoroutine(currentAnimation);
+        currentAnimation = StartCoroutine(ExitAnimateScale(Vector3.one, Vector3.zero));
         textMeshPro.text = "";
         player.isInteracting = false;
         InputActions.Instance.isRegularDialogue = false;
         wasCalled = false;
+    }
+    protected System.Collections.IEnumerator ExitAnimateScale(Vector3 start, Vector3 target)
+    {
+        float elapsed = 0f;
+        while (elapsed < 0.3f)
+        {
+            elapsed += Time.deltaTime;
+            float tiempo = elapsed / 0.3f;
+            rectTransform.localScale = Vector2.Lerp(start, target, tiempo);
+            yield return null;
+        }
+        rectTransform.localScale = target;
+        isAnimated = false;
+
+        if (target == Vector3.zero && currentExit == null) Hide();
     }
 }
