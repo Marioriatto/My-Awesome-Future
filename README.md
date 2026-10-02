@@ -1,5 +1,7 @@
 # [My Awesome Future]
 
+# Registered devlog hours on the website are not meant to be validated, they are just a way to time the amount of time each progress took.
+
 ## Description
 
 [My Awesome Future] Is a cozy life frutiger aero inspired game, where you can talk with characters, sell and buy items, and interact with the enviroment.
@@ -24,7 +26,7 @@
    - Selecciona **Vender** para ofrecer ítems de tu propio inventario a cambio de monedas/burbujas.
    - Elige **Volver** para salir del menú de comercio y continuar la conversación.
 
-## Crédits
+## Credits
 
 - **Apple**
   - [Apple – Pexels](https://www.pexels.com/es-es/foto/fruta-de-manzana-roja-y-naranja-102104/)
