@@ -5,12 +5,6 @@ public class SaveData
     public string name;
     public int bubbles;
     public int[] inventorySlots = new int[10];
-    public SaveData (string name, int bubbles, int[] inventorySlots)
-    {
-        this.name = name;
-        this.bubbles = bubbles;
-        this.inventorySlots = inventorySlots;
-    }
 }
 [System.Serializable]
 // Dialogue Struct

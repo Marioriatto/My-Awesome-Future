@@ -8,13 +8,13 @@ public class JsonLoader : MonoBehaviour
     public bool[] npcAvailability, dealerAvailability;
     public bool isSaving;
     public List<ItemData> itemDataList;
-    private readonly string path = Path.Combine(Application.streamingAssetsPath, "Dialogues.json");
+    private string dialoguesPath, saveDataPath;
     public InventoryUI inventoryUI;
     void LoadDialogues()
     {
-        if (File.Exists(path))
+        if (File.Exists(dialoguesPath))
         {
-            string json = File.ReadAllText(path);
+            string json = File.ReadAllText(dialoguesPath);
             DialoguesData data = JsonUtility.FromJson<DialoguesData>(json);
             foreach (DialogueType type in data.types)
             {
@@ -29,18 +29,20 @@ public class JsonLoader : MonoBehaviour
     } 
     void LoadSaveData()
     {
-        if (File.Exists(path))
+        if (File.Exists(saveDataPath))
         {
-            string json = File.ReadAllText(path);
+            string json = File.ReadAllText(saveDataPath);
             SaveData saveData = JsonUtility.FromJson<SaveData>(json);
             PlayerStats.Instance.playerName = saveData.name;
             PlayerStats.Instance.bubbles = saveData.bubbles;
             for (int i = 0; i < 10; i++)
             {
-                if (saveData.inventorySlots[i] == -1) continue;
+                if (saveData.inventorySlots[i] == -1)
+                    continue;
                 else
                 {
-                    inventoryUI.slots[i].SetContainer(itemDataList[i]);
+                    inventoryUI.slots[i].Discard();
+                    inventoryUI.slots[i].SetContainer(itemDataList[saveData.inventorySlots[i]]);
                 }
             }
         }
@@ -51,7 +53,7 @@ public class JsonLoader : MonoBehaviour
     }
     public void WriteSaveData()
     {
-        if (File.Exists(path))
+        if (File.Exists(saveDataPath))
         {
             isSaving = true;
             int[] slots = new int[10];
@@ -64,9 +66,12 @@ public class JsonLoader : MonoBehaviour
                 else
                     slots[i] = inventoryUI.slots[i].itemData.id;
             }
-            SaveData saveData = new SaveData(PlayerStats.Instance.playerName,PlayerStats.Instance.bubbles, slots);
+            SaveData saveData = new SaveData();
+            saveData.name = PlayerStats.Instance.playerName;
+            saveData.bubbles = PlayerStats.Instance.bubbles;
+            saveData.inventorySlots = slots;
             string json = JsonUtility.ToJson(saveData);
-            File.WriteAllText(path, json);
+            File.WriteAllText(saveDataPath, json);
             isSaving = false;
         }
         else
@@ -76,6 +81,8 @@ public class JsonLoader : MonoBehaviour
     }
     void Awake()
     {
+        dialoguesPath = Path.Combine(Application.streamingAssetsPath, "Dialogues.json");
+        saveDataPath = Path.Combine(Application.streamingAssetsPath, "SaveData.json");
         if (inventoryUI == null) Debug.LogWarning("No inventoryUI reference in JsonLoader");
         if (Instance != null && Instance != this)
         {
