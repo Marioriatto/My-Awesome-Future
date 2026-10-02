@@ -72,7 +72,7 @@ public class RegularDialogueBubble : DialogueBubble
         pendingShop = null;
         if (PlayerStats.Instance.ChangeBubbles(-item.price))
         {
-            inventoryUI.Add(item);
+            inventoryUI.SetSlot(item);
             shop.RemoveSelectedItem();
             HideTemp();
             shop.ShowGridBack();   

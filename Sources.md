@@ -12,3 +12,6 @@ SKYSCRAPERS:
 https://sketchfab.com/3d-models/low-poly-skyscrapers-4d51f4281a8649528569021411820d28#download
 PLANT:
 https://sketchfab.com/3d-models/indoor-plant-7c5e77d572c848458e5d898ac49f6f27#download
+WATERMELON:
+https://www.pexels.com/es-es/foto/fruta-de-sandia-1313267/
+https://sketchfab.com/3d-models/watermelon-game-ready-2k-pbr-c88c3221f0b9436293a69a641948c36d#download

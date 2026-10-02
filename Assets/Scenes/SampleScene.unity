@@ -289,21 +289,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e816a18511d33b247a0f08e4efff55b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InventoryUI
-  optionsBubble: {fileID: 63035417}
-  slots: []
   playerController: {fileID: 1251890865}
+  slotPrefab: {fileID: 2207646332249388215, guid: 24186d87d2612234d8c0f781a5414b72, type: 3}
+  slots: []
+  optionsBubble: {fileID: 63035417}
   regularDialogueBubble: {fileID: 1325043878}
   bubbleCountRectTransform: {fileID: 93126811}
+  selectingRow: 0
+  selectingCol: 0
+  startPosition: {x: -650, y: 50}
+  spacing: {x: 330, y: 300}
   isCoolingAction: 0
   isSelectingSlotOptions: 0
   isSelling: 0
   isBuying: 0
   isPlayerInventory: 1
-  selectingRow: 0
-  selectingCol: 0
-  startPosition: {x: -650, y: 50}
-  spacing: {x: 330, y: 300}
-  slotPrefab: {fileID: 2207646332249388215, guid: 24186d87d2612234d8c0f781a5414b72, type: 3}
 --- !u!1 &63035416
 GameObject:
   m_ObjectHideFlags: 0
@@ -1391,21 +1391,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e816a18511d33b247a0f08e4efff55b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InventoryUI
-  optionsBubble: {fileID: 63035417}
-  slots: []
   playerController: {fileID: 1251890865}
+  slotPrefab: {fileID: 2207646332249388215, guid: 24186d87d2612234d8c0f781a5414b72, type: 3}
+  slots: []
+  optionsBubble: {fileID: 63035417}
   regularDialogueBubble: {fileID: 1325043878}
   bubbleCountRectTransform: {fileID: 0}
+  selectingRow: 0
+  selectingCol: 0
+  startPosition: {x: -650, y: 50}
+  spacing: {x: 330, y: 300}
   isCoolingAction: 0
   isSelectingSlotOptions: 0
   isSelling: 0
   isBuying: 0
   isPlayerInventory: 0
-  selectingRow: 0
-  selectingCol: 0
-  startPosition: {x: -650, y: 50}
-  spacing: {x: 330, y: 300}
-  slotPrefab: {fileID: 2207646332249388215, guid: 24186d87d2612234d8c0f781a5414b72, type: 3}
 --- !u!114 &899091049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1629,6 +1629,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Spawner
   fruits:
   - {fileID: 6248771157917697480, guid: ec3b849f7176aa642abff0a4506034c9, type: 3}
+  - {fileID: 6248771157917697480, guid: 83920c2302cf8f640b89064f68e412b8, type: 3}
   treePrefab: {fileID: 1973905403469854200, guid: 9546fc5ee42fd7646a3d07bb610e9258, type: 3}
   bubbles: {fileID: 2336983857482979661, guid: 6221e376b9e470d469f95b049af7a869, type: 3}
   NPC: {fileID: 2472147525433392780, guid: c9b2f5bd1ec26854f82cbe6fc46679a0, type: 3}
@@ -2358,6 +2359,11 @@ MonoBehaviour:
   dealer: []
   npcAvailability: 
   dealerAvailability: 
+  itemDataList:
+  - {fileID: 11400000, guid: 7b03e37489f601b409d2b40ea8f3f7af, type: 2}
+  - {fileID: 11400000, guid: e790ff4f84f98af46abc2f427d0a296b, type: 2}
+  - {fileID: 11400000, guid: 8ff2ab1772609ac4b901e0575a153fff, type: 2}
+  inventoryUI: {fileID: 59630016}
 --- !u!1001 &884249729083506529
 PrefabInstance:
   m_ObjectHideFlags: 0

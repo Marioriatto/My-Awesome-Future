@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 36618767092c6bd4cafa4d59cd89911e, type: 3}
-  m_Name: Item2Data
+  m_Name: WatermelonData
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  itemName: Sweet Apple
-  description: This is a sweet appple. Worth 120 bubbles.
-  icon: {fileID: 6910997055501141976, guid: fed6ec2f132d3a6409b7933a753fc53a, type: 3}
-  prefab: {fileID: 6248771157917697480, guid: ec3b849f7176aa642abff0a4506034c9, type: 3}
+  id: 2
+  itemName: Watermelon
+  description: This is a Watermelon. Worth 120 bubbles.
+  icon: {fileID: 6910997055501141976, guid: 5bd390a28f958c248a66978e137c6183, type: 3}
+  prefab: {fileID: 6248771157917697480, guid: 83920c2302cf8f640b89064f68e412b8, type: 3}
   options: []
   price: 120
   isSaleable: 0

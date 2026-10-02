@@ -5,6 +5,7 @@ public class ExitDialogueBubble : RegularDialogueBubble
 {
     // write a way to save data
     public bool wasCalled;
+    private Coroutine currentExit;
     private PlayerController player;
     protected override void Awake()
     {
@@ -20,10 +21,20 @@ public class ExitDialogueBubble : RegularDialogueBubble
         base.Start();
         player = PlayerStats.Instance.gameObject.GetComponent<PlayerController>();
     }
-    private void Exit()
+    public void Exit()
     {
-       PopOut();
-       #if UNITY_EDITOR
+        if (currentExit != null) StopCoroutine(currentExit);
+        currentExit = StartCoroutine(ExitAnimation());
+    }
+    private System.Collections.IEnumerator ExitAnimation()
+    {
+        PopOut();
+        JsonLoader.Instance.WriteSaveData();
+        while (isAnimated || JsonLoader.Instance.isSaving)
+        {
+            yield return null;
+        }
+        #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;
         #else
             Application.Quit();

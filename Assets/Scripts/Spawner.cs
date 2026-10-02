@@ -34,7 +34,7 @@ public class Spawner : MonoBehaviour
             GameObject instance;
             //solo spawnean items
             int desicion = Random.Range(0,1), x = Random.Range(-25,25), z = Random.Range(-25,25);
-            if (desicion == 0) instance = Instantiate(fruits[Random.Range(0, fruits.Length - 1)]);
+            if (desicion == 0) instance = Instantiate(fruits[Random.Range(0, fruits.Length)]);
             else instance = Instantiate(bubbles);
             int deltax = 1;
             // deltay = 1;

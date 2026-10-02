@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36618767092c6bd4cafa4d59cd89911e, type: 3}
   m_Name: Item3Data
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
+  id: 3
   itemName: Rare Apple
   description: This a rare apple. Worth 300 bubbles.
   icon: {fileID: 6910997055501141976, guid: fed6ec2f132d3a6409b7933a753fc53a, type: 3}

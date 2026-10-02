@@ -1,14 +1,9 @@
 fileFormatVersion: 2
-guid: 6f4f8a42da3c5b84385844a71b900cce
+guid: 7c50067cb42337c429bdb3fb3a4f1439
 ModelImporter:
   serializedVersion: 24600
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: initialShadingGroup
-    second: {fileID: 2100000, guid: 7ed296fed0248d040be3d9371c2dd1e7, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
