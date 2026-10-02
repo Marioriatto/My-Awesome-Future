@@ -19,6 +19,7 @@ public class ExitDialogueBubble : RegularDialogueBubble
     protected override void Start()
     {
         base.Start();
+        currentExit = null;
         player = PlayerStats.Instance.gameObject.GetComponent<PlayerController>();
     }
     public void Exit()
@@ -34,7 +35,6 @@ public class ExitDialogueBubble : RegularDialogueBubble
         JsonLoader.Instance.WriteSaveData();
         while (isAnimated || JsonLoader.Instance.isSaving)
         {
-            Debug.Log("Ciclo");
             yield return null;
         }
         #if UNITY_EDITOR

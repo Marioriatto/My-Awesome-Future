@@ -41,8 +41,8 @@ public class JsonLoader : MonoBehaviour
                     continue;
                 else
                 {
-                    inventoryUI.slots[i].Discard();
-                    inventoryUI.slots[i].SetContainer(itemDataList[saveData.inventorySlots[i]]);
+                    Debug.Log(saveData.inventorySlots[i] - 1);
+                    inventoryUI.slots[i].SetContainer(itemDataList[saveData.inventorySlots[i] - 1]);
                 }
             }
         }
@@ -64,7 +64,9 @@ public class JsonLoader : MonoBehaviour
                     slots[i] = -1;
                 }
                 else
+                {
                     slots[i] = inventoryUI.slots[i].itemData.id;
+                }
             }
             SaveData saveData = new SaveData();
             saveData.name = PlayerStats.Instance.playerName;
