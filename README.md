@@ -21,10 +21,6 @@
 1. **Explore** Move around.
 2. **Gather resources** Pick items so you can sell them or buy more.
 3. **Interact with NPCs**: Talk with them. NPCs are blue, Dealers are red.
-   - Selecciona la opción **Comprar** para ver el inventario del comerciante.
-   - Elige un ítem para ver su descripción y confirmar la compra, o vuelve atrás para seguir explorando el catálogo.
-   - Selecciona **Vender** para ofrecer ítems de tu propio inventario a cambio de monedas/burbujas.
-   - Elige **Volver** para salir del menú de comercio y continuar la conversación.
 
 ## Credits
 
