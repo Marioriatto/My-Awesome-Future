@@ -18,7 +18,7 @@ public class PlayerInteractionBox : MonoBehaviour
             if (interactingSubject == null && InputActions.Instance.buttonInput != 0 && parentScript.isInteracting == false) 
             {
                 interactingSubject = other.gameObject;
-                parentScript.isInteracting = true;
+                parentScript.SetInteracting(true);
                 NPC npc = other.gameObject.GetComponent<NPC>();
                 if (npc.dialogues == null) Debug.Log("no dialogues found in npc"+ npc.npcName);
                 else
@@ -36,7 +36,7 @@ public class PlayerInteractionBox : MonoBehaviour
             if (interactingSubject == null && InputActions.Instance.buttonInput != 0 && parentScript.isInteracting == false)
             {
                 interactingSubject = other.gameObject;
-                parentScript.isInteracting = true;
+                parentScript.SetInteracting(true);
                 Dealer dealer = other.gameObject.GetComponent<Dealer>();
                 if (dealer.dialogues == null) Debug.Log("no dialogues found in dealer");
                 else
@@ -47,15 +47,6 @@ public class PlayerInteractionBox : MonoBehaviour
                     dialogueBubble.SetText(dealer);
                 }
                 return;
-            }
-        }
-        else if (other.CompareTag("House"))
-        {
-            if (InputActions.Instance.buttonInput != 0)
-            {
-                parentScript.isInteracting = true;
-                Debug.Log("casa TODO");
-                parentScript.isInteracting = false;
             }
         }
     }

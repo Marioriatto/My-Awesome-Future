@@ -27,7 +27,7 @@ public class JsonLoader : MonoBehaviour
             Debug.LogWarning("No hay json");
         }
     } 
-    void LoadSaveData()
+    public void LoadSaveData()
     {
         if (File.Exists(saveDataPath))
         {
@@ -41,7 +41,6 @@ public class JsonLoader : MonoBehaviour
                     continue;
                 else
                 {
-                    Debug.Log(saveData.inventorySlots[i] - 1);
                     inventoryUI.slots[i].SetContainer(itemDataList[saveData.inventorySlots[i] - 1]);
                 }
             }
@@ -103,9 +102,5 @@ public class JsonLoader : MonoBehaviour
         {
             dealerAvailability[i] = true;
         }
-    }
-    void Start()
-    {
-        LoadSaveData();
     }
 }

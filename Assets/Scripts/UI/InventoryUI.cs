@@ -62,6 +62,8 @@ public class InventoryUI : MonoBehaviour
                 startPosition.y - row * spacing.y
             );
         }
+        if (isPlayerInventory)
+            JsonLoader.Instance.LoadSaveData();
     }
     void Awake()
     {
@@ -328,6 +330,7 @@ public class InventoryUI : MonoBehaviour
         selectedSlot.Hover();
         if (!isSelling && !isBuying)
             playerController.isInteracting = InputActions.Instance.isInventoryOpen;
+            Debug.Log("inventoryUIisinteracting "+playerController.isInteracting);
         if (!InputActions.Instance.isInventoryOpen)
         {
             if (selectedSlot.itemPrefab != null) selectedSlot.QuitHover();

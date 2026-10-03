@@ -30,7 +30,7 @@ public class ExitDialogueBubble : RegularDialogueBubble
     private System.Collections.IEnumerator ExitAnimation()
     {
         PopOut();
-        player.isInteracting = true;
+        player.SetInteracting(true);
         wasCalled = true;
         JsonLoader.Instance.WriteSaveData();
         while (isAnimated || JsonLoader.Instance.isSaving)
@@ -48,7 +48,7 @@ public class ExitDialogueBubble : RegularDialogueBubble
         if (wasCalled || InputActions.Instance.isInventoryOpen || InputActions.Instance.isTalking) return;
         wasCalled = true;
         InputActions.Instance.isRegularDialogue = true;
-        player.isInteracting = true;
+        player.SetInteracting(true);
         PopIn();
         options = new List<DialogueOption>();
         options.Add(new DialogueOption{ text = "Quit", onOptionSelected = Exit});
@@ -83,7 +83,8 @@ public class ExitDialogueBubble : RegularDialogueBubble
         if (currentAnimation != null) StopCoroutine(currentAnimation);
         currentAnimation = StartCoroutine(ExitAnimateScale(Vector3.one, Vector3.zero));
         textMeshPro.text = "";
-        player.isInteracting = false;
+        Debug.Log("PoppingOut");
+        player.SetInteracting(false);
         InputActions.Instance.isRegularDialogue = false;
         wasCalled = false;
     }

@@ -30,7 +30,6 @@ public class Slot : MonoBehaviour
     {
         isAnimatingGlow = false;
         image = GetComponent<Image>();
-        iconNormalSize = new Vector2(0f,0f);
         normalSize = new Vector2(250f,250f);
         hoverScaling = 1.2f;
         rectTransform = gameObject.GetComponent<RectTransform>();
@@ -92,6 +91,8 @@ public class Slot : MonoBehaviour
     }
     public void Hover()
     {
+        Debug.Log("icon=");
+        Debug.Log(icon);
         rectTransform.sizeDelta = new Vector2(normalSize.x * hoverScaling, normalSize.y * hoverScaling);
         if (icon != null) 
         {
@@ -121,7 +122,6 @@ public class Slot : MonoBehaviour
             iconRectTransform.localScale = Vector3.zero;
             Destroy(icon);
             icon = null;
-            iconNormalSize = new Vector2(0f,0f);
             iconRectTransform = null;
         }
     }

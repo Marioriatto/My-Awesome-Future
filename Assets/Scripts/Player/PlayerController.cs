@@ -40,6 +40,7 @@ public class PlayerController : MonoBehaviour
     }
     void Start()
     {
+        isInteracting = false;
         currentCooldown = null;
         if (inventoryScript == null) Debug.LogWarning("PlayerController Script does not have a reference to Inventory script");
     }
